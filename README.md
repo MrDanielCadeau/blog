@@ -1,37 +1,42 @@
-## Welcome to GitHub Pages
+# Content v2 Minimal Starter
 
-You can use the [editor on GitHub](https://github.com/MrDanielCadeau/blog/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+Look at the [Content documentation](https://content-v2.nuxtjs.org/) to learn more.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Setup
 
-### Markdown
+Make sure to install the dependencies:
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+```bash
+# yarn
+yarn install
 
-```markdown
-Syntax highlighted code block
+# npm
+npm install
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+# pnpm
+pnpm install --shamefully-hoist
 ```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+## Development Server
 
-### Jekyll Themes
+Start the development server on http://localhost:3000
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/MrDanielCadeau/blog/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+```bash
+npm run dev
+```
 
-### Support or Contact
+## Production
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+Build the application for production:
+
+```bash
+npm run build
+```
+
+Locally preview production build:
+
+```bash
+npm run preview
+```
+
+Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment) for more information.
