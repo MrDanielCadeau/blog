@@ -6,3 +6,4 @@ node_modules
 .output
 .env
 pnpm-lock.yaml
+dist
