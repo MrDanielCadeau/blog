@@ -6,7 +6,7 @@
     "start": "node .output/server/index.mjs",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "deploy": "cp CNAME dist/ && cp favicon.ico dist/ && push-dir --dir=dist --branch=gh-pages --cleanup"
+    "deploy": "cp CNAME dist/ && cp favicon.ico dist/ && cp .nojekyll dist/ && push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "devDependencies": {
     "@nuxt/content": "^2.0.1",
