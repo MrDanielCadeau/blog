@@ -25,6 +25,7 @@ import Footer from './components/Footer.vue'
 
 html {
     scroll-behavior: smooth;
+    height: 100%;
 }
 
 * {
@@ -41,13 +42,13 @@ html, body, p, ul, h3 {
 
 body {
     position: relative;
-    min-height: 100vh;
+    height: 100%;
 }
 
 main {
     max-width: 800px;
-    margin: 100px auto auto;
-    min-height: calc(100vh - 6rem);
+    margin: auto;
+    padding: 100px 0;
 }
 
 /** media query for mobile */
@@ -59,7 +60,7 @@ main {
     main {
         width: 100%;
         max-width: 100%;
-        margin: 150px 0 0;
+        padding: 200px 0;
     }
 }
 

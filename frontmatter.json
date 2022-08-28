@@ -48,10 +48,5 @@
   ],
   "frontMatter.framework.id": "nuxt",
   "frontMatter.content.publicFolder": "static",
-  "frontMatter.content.pageFolders": [
-    {
-      "title": "blog",
-      "path": "[[workspace]]/content/blog"
-    }
-  ]
+  "frontMatter.content.pageFolders": []
 }

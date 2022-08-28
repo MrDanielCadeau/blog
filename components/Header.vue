@@ -1,6 +1,6 @@
 <template>
     <header>
-        <a href="#" class="active-link"><h1>blog.<span class="text-orange">d</span>cadeau<span class="text-orange">.</span>tech</h1></a>
+        <a href="/" class="active-link"><h1>blog.<span class="text-orange">d</span>cadeau<span class="text-orange">.</span>tech</h1></a>
         <nav>
             <a href="https://www.dcadeau.tech" class="not-active-link">About me</a>
             <a href="https://www.linkedin.com/in/daniel-cadeau-dev/" class="not-active-link">LinkedIn</a>
