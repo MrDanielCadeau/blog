@@ -2,10 +2,10 @@
     <footer id="footer">
         <section>
             <div>
-                <p class="text-bold">Feel free to contact me</p>
+                <p class="text-bold text-light">Feel free to contact me</p>
                 <a href="mailto:contact@dcadeau.tech" class="text-pastel">contact@dcadeau.tech</a>
             </div>
-            <p class="text-bold"><span class="text-pastel">d</span>cadeau<span class="text-pastel">.</span>tech 2022</p>
+            <p class="text-bold text-light"><span class="text-pastel">d</span>cadeau<span class="text-pastel">.</span>tech 2022</p>
         </section>
     </footer>
 </template>
@@ -15,16 +15,12 @@
 
 <style scoped>
 footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
     width: 100%;
     padding: 64px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: var(--dark);
-    color: var(--lightgrey);
     height: 6rem;
 }
 

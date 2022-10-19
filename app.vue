@@ -20,7 +20,7 @@ import Footer from './components/Footer.vue'
     --light: #fff;
     --grey: #646464;
     --lightgrey: #eeeeee;
-    --text-color: #000;
+    --text-color: var(--dark);
 }
 
 html {
@@ -31,13 +31,22 @@ html {
 * {
     font-family: 'Poppins', sans-serif;
     text-decoration: none;
-    color: unset;
+    color: var(--text-color);
     list-style: none;
 }
 
-html, body, p, ul, h3 {
+html, body, p, ul, h2 {
     margin: 0;
     padding: 0;
+}
+
+li::before {
+    content: "#";
+    color: var(--orange);
+    position: absolute;
+    width: 1em;
+    font-weight: bold;
+    margin-left: -1em;
 }
 
 body {
@@ -79,5 +88,9 @@ main {
 
 .text-pastel {
     color: var(--pastel);
+}
+
+.text-light {
+    color: var(--lightgrey)!important;
 }
 </style>
