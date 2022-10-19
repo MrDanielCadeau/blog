@@ -7,5 +7,3 @@ node_modules
 .env
 pnpm-lock.yaml
 dist
-# temporary ignored content files
-content/* 
