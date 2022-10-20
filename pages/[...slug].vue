@@ -1,14 +1,18 @@
 <template>
   <main>
-    <ContentDoc :query="queryDoc" v-slot="{ doc }">
-      <img id="preview" :src="'/img' + doc.preview" :alt="doc.alt" class="article-image" />
-      <p class="date">{{ new Date(doc.date).toISOString().slice(0, 10) }}</p>
+    <article v-if="data">
+      <img id="preview" :src="'/img' + data.preview" :alt="data.alt" class="article-image" />
+      <p class="date">{{ new Date(data.date).toISOString().slice(0, 10) }}</p>
       <div class="title">
-        <h1>{{ doc.title }}</h1>
+        <h1>{{ data.title }}</h1>
         <div></div>
       </div>
-      <ContentRenderer :value="doc" />
-    </ContentDoc>
+      <ContentRenderer :value="data" />
+    </article>
+    <section v-else>
+      <h2>404 - Article not found</h2>
+      <a href="/">Go back to home</a>
+    </section>
     <h2 class="separator">Latest articles</h2>
     <ul>
       <ContentList :query="query" v-slot="{ list }">
@@ -26,8 +30,28 @@
 
 <script setup lang="ts">
 import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
-const query: QueryBuilderParams = { limit: 5, sort: [ { date: -1 } ] }
-const queryDoc: QueryBuilderParams = { limit: 1, sort: [ { date: 1 } ] }
+
+const { path } = useRoute()
+
+const { data } = await useAsyncData(`content-${path}`, () => {
+  return queryContent().where({ _path: (path === '/')
+  ? '/2022-10-18-welcome-to-dcadeau-tech-blog'
+  : path }).findOne()
+})
+
+const query: QueryBuilderParams = {
+  limit: 5, sort: [{ date: -1 }],
+  first: false,
+  skip: 0,
+  only: [],
+  without: [],
+  where: [],
+  surround: {
+    query: '',
+    before: 0,
+    after: 0
+  }
+}
 </script>
 
 <style>
