@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "build": "nuxt build && cp CNAME dist/ && cp favicon.ico dist/ && cp -r public dist/ && nuxt",
+    "build": "nuxt build",
     "dev": "nuxt dev",
     "start": "node .output/server/index.mjs",
     "generate": "nuxt generate",
