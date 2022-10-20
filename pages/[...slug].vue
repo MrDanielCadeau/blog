@@ -1,7 +1,7 @@
 <template>
   <main>
     <ContentDoc v-slot="{ doc }">
-      <img id="preview" :src="`static${doc.preview}`" alt="image" />
+      <img id="preview" :src="'/img' + doc.preview" :alt="doc.alt" class="article-image" />
       <p class="date">{{ new Date(doc.date).toISOString().slice(0, 10) }}</p>
       <div class="title">
         <h1>{{ doc.title }}</h1>
@@ -9,20 +9,25 @@
       </div>
       <ContentRenderer :value="doc" />
     </ContentDoc>
-    <h2 class="separator">Last articles</h2>
+    <h2 class="separator">Latest articles</h2>
     <ul>
-       <ContentList path="/" v-slot="{ list }">
-        <li class="last_article" v-for="article in list.reverse().slice(0, 5)">
+      <ContentList :query="query" v-slot="{ list }">
+        <li class="last_article" v-for="article in list">
           <a :key="article._path"
-             :href="article._path">
+            :href="article._path">
             <h2>{{ article.title }}</h2>
             <p>{{ article.description }}</p>
           </a>
-        </li>
-      </ContentList>
-    </ul>
-  </main>
+      </li>
+    </ContentList>
+  </ul>
+</main>
 </template>
+
+<script setup lang="ts">
+import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
+const query: QueryBuilderParams = { limit: 5, sort: [ { date: -1 } ] }
+</script>
 
 <style>
 div.title {
@@ -52,7 +57,7 @@ div.title div {
 p.date {
   font-size: small;
   color: var(--dark-orange);
-
+  
 }
 
 ul li.last_article {

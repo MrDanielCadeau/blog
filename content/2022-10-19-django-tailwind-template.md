@@ -4,6 +4,8 @@ description: This is a blog post about how to use Tailwind CSS with Django. A Gi
   template is even provided
 date: 2022-10-19T14:30:41.748Z
 preview: /article-django-template-banner.png
+alt: A banner to describe the technologies used for this article (Django, Tailwind,
+  Gitpod)
 draft: ""
 tags:
   - django
@@ -12,7 +14,7 @@ tags:
   - gitpod
 categories: ""
 slug: django-tailwind-template
-lastmod: 2022-10-19T14:49:21.871Z
+lastmod: 2022-10-20T09:02:32.950Z
 ---
 
 A quick presentation for a template I made to use Tailwind CSS with Django.    
