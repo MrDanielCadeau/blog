@@ -69,7 +69,10 @@ main {
     main {
         width: 100%;
         max-width: 100%;
-        padding: 200px 0;
+        padding: 175px 0 32px;
+    }
+    li::before {
+        margin-left: -0.75em;
     }
 }
 

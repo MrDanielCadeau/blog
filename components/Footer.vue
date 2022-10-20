@@ -49,6 +49,7 @@ footer section > p {
     }
     footer section {
         width: 100%;
+        flex-direction: column;
         padding: 0;
     }
     footer section div,

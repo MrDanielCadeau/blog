@@ -13,7 +13,12 @@
       <h2>404 - Article not found</h2>
       <a href="/">Go back to home</a>
     </section>
-    <h2 class="separator">Latest articles</h2>
+    <div class="separator">
+      <h2>Latest articles</h2>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
     <ul>
       <ContentList :query="query" v-slot="{ list }">
         <li class="last_article" v-for="article in list">
@@ -69,7 +74,7 @@ div.title div {
   padding: 0 4px;
   z-index: -1;
   position: absolute;
-  bottom: 8px;
+  bottom: 6px;
   left: 0;
   background-color: var(--pastel);
   width: fit-content;
@@ -77,6 +82,10 @@ div.title div {
   width: 100%;
   border-top-right-radius: 16px;
   border-bottom-right-radius: 16px;
+}
+
+article > *:not(img) {
+  padding: 0 16px;
 }
 
 p.date {
@@ -87,6 +96,7 @@ p.date {
 
 ul li.last_article {
   margin: 16px 0;
+  padding: 0 16px;
 }
 
 ul li.last_article:hover a {
@@ -106,17 +116,27 @@ div > h2 {
   margin: 8px 0;
 }
 
+.separator {
+  padding: 16px 16px;
+  margin: 16px 0;
+  text-align: right;
+}
+
+.separator h2 {
+  color: var(--dark-orange);
+}
+
+.separator div {
+  height: 1px;
+  width: 100%;
+  background-color: var(--dark-orange);
+  margin: 4px 0;
+}
+
 #preview {
   width: 100%;
   max-height: 250px;
   object-fit: cover;
   margin-bottom: 32px;
-}
-
-.separator {
-  color: var(--dark-orange);
-  margin: 16px 0;
-  padding: 16px 0;
-  border-bottom: 1px solid var(--dark-orange);;
 }
 </style>

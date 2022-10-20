@@ -29,7 +29,7 @@ header {
 
 header > a {
     padding: 0 64px;
-    font-size: xx-large;
+    font-size: 2em;
     font-weight: bold;
 }
 
@@ -64,4 +64,19 @@ header nav a:hover:after {
 header nav a:not(:last-child) {
     margin-right: 16px;
 }
+
+/** media query for mobile */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding-bottom: 8px;
+        padding-top: 8px;
+        height: 7rem;
+    }
+    
+    header > nav, header > a {
+        padding: 0 16px;
+    }
+}
+
 </style>
