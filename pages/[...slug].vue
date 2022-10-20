@@ -1,6 +1,6 @@
 <template>
   <main>
-    <ContentDoc v-slot="{ doc }">
+    <ContentDoc :query="queryDoc" v-slot="{ doc }">
       <img id="preview" :src="'/img' + doc.preview" :alt="doc.alt" class="article-image" />
       <p class="date">{{ new Date(doc.date).toISOString().slice(0, 10) }}</p>
       <div class="title">
@@ -14,10 +14,10 @@
       <ContentList :query="query" v-slot="{ list }">
         <li class="last_article" v-for="article in list">
           <a :key="article._path"
-            :href="article._path">
-            <h2>{{ article.title }}</h2>
-            <p>{{ article.description }}</p>
-          </a>
+          :href="article._path">
+          <h2>{{ article.title }}</h2>
+          <p>{{ article.description }}</p>
+        </a>
       </li>
     </ContentList>
   </ul>
@@ -27,6 +27,7 @@
 <script setup lang="ts">
 import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
 const query: QueryBuilderParams = { limit: 5, sort: [ { date: -1 } ] }
+const queryDoc: QueryBuilderParams = { limit: 1, sort: [ { date: 1 } ] }
 </script>
 
 <style>
