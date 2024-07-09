@@ -1,10 +1,10 @@
 <template>
     <header>
-        <a href="/" class="active-link">blog.<span class="text-orange">d</span>cadeau<span class="text-orange">.</span>tech</a>
+        <a href="/" class="active-link">blog.<span class="text-orange">d</span>cadeau<span class="text-orange">.</span>com</a>
         <nav>
-            <a href="https://www.dcadeau.tech" class="not-active-link">About me</a>
+            <a href="https://www.dcadeau.com" class="not-active-link">About me</a>
             <a href="https://www.linkedin.com/in/daniel-cadeau-dev/" class="not-active-link">LinkedIn</a>
-            <a href="https://github.com/MrDanielCadeau" class="not-active-link">Github</a>
+            <a href="https://github.com/daliendev" class="not-active-link">Github</a>
         </nav>
     </header>
 </template>
